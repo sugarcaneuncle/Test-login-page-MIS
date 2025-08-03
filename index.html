@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNICLOBE MIS</title>
+    <style>
+        /* Reset default margins and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            /* PRIMARY-COLOR: #000000 */
+            color: #000000;
+            /* BACKGROUND-COLOR: #FFFFFF */
+            background-color: #FFFFFF;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+            /* Debug border - remove in final version */
+            border: 1px dashed #eee;
+        }
+
+        .logo-box {
+            padding: 2rem;
+            /* Debug border - remove in final version */
+            border: 1px solid rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            /* PRIMARY-COLOR: #000000 */
+            color: #000000;
+            max-width: 200px;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 1.2rem;
+                max-width: 150px;
+            }
+            
+            .logo-box {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1rem;
+                max-width: 120px;
+            }
+            
+            .logo-box {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-box">
+            <h1 class="logo">UNICLOBE MIS</h1>
+            <!-- Replace <h1> with <img src="logo.png" alt="UNICLOBE MIS" style="max-width: 200px;"> if using an image -->
+        </div>
+    </div>
+</body>
+</html>
