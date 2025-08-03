@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add interactive features
     addInteractivity();
     
+    // Apply random colors to boxes
+    applyRandomColors();
+    
     // Handle window resize
     window.addEventListener('resize', debounce(handleResize, 250));
     
@@ -22,6 +25,43 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('orientationchange', function() {
         setTimeout(handleResize, 100);
     });
+    
+    function applyRandomColors() {
+        // Generate random colors for container and logo box
+        const containerColor = generateRandomColor(0.1); // Light background
+        const logoBoxColor = generateRandomColor(0.2); // Slightly more opaque
+        const logoTextColor = generateRandomColor(1); // Solid color for text
+        
+        // Apply colors
+        container.style.backgroundColor = containerColor;
+        logoBox.style.backgroundColor = logoBoxColor;
+        logo.style.color = logoTextColor;
+        
+        // Update border colors to complement the random colors
+        const borderColor = generateRandomColor(0.3);
+        container.style.borderColor = borderColor;
+        logoBox.style.borderColor = borderColor;
+        
+        console.log('Random colors applied:', {
+            container: containerColor,
+            logoBox: logoBoxColor,
+            text: logoTextColor,
+            border: borderColor
+        });
+    }
+    
+    function generateRandomColor(alpha = 1) {
+        // Generate vibrant but readable colors
+        const hue = Math.floor(Math.random() * 360);
+        const saturation = Math.floor(Math.random() * 40) + 60; // 60-100% saturation
+        const lightness = Math.floor(Math.random() * 30) + 35; // 35-65% lightness
+        
+        if (alpha === 1) {
+            return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+        } else {
+            return `hsla(${hue}, ${saturation}%, ${lightness}%, ${alpha})`;
+        }
+    }
     
     function initResponsiveBehavior() {
         // Set initial responsive state
@@ -50,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (window.innerWidth > 768) {
             logoBox.addEventListener('mouseenter', function() {
                 this.style.transform = 'scale(1.05)';
-                this.style.boxShadow = '0 8px 25px rgba(0,0,0,0.1)';
+                this.style.boxShadow = '0 8px 25px rgba(0,0,0,0.2)';
             });
             
             logoBox.addEventListener('mouseleave', function() {
@@ -61,10 +101,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function addInteractivity() {
-        // Add click effect
+        // Add click effect with color change
         logoBox.addEventListener('click', function() {
             this.style.transform = 'scale(0.95)';
+            
+            // Change colors on click
             setTimeout(() => {
+                applyRandomColors();
                 this.style.transform = 'scale(1)';
             }, 150);
         });
@@ -80,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Add focus styles
         logoBox.addEventListener('focus', function() {
-            this.style.outline = '2px solid #000000';
+            this.style.outline = '2px solid currentColor';
             this.style.outlineOffset = '2px';
         });
         
