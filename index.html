@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNICLOBE MIS</title>
+    <style>
+        /* PRIMARY-COLOR: #000000 */
+        /* BACKGROUND-COLOR: #FFFFFF */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFFFFF;
+            color: #000000;
+        }
+        
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+            border: 1px dashed #eee; /* Debug border - remove in final version */
+        }
+        
+        .logo-box {
+            padding: 2rem;
+            border: 1px solid rgba(0,0,0,0.1); /* Optional border for visual guidance - remove in final version */
+            margin: 2rem;
+        }
+        
+        .logo {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+            color: #000000;
+            max-width: 200px;
+            line-height: 1.2;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 1.5rem;
+                max-width: 150px;
+            }
+            
+            .logo-box {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.2rem;
+                max-width: 120px;
+            }
+            
+            .logo-box {
+                padding: 1rem;
+                margin: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-box">
+            <h1 class="logo">UNICLOBE MIS</h1>
+            <!-- Replace <h1> with <img src="logo.png" alt="UNICLOBE MIS" style="max-width: 200px;"> if using an image -->
+        </div>
+    </div>
+</body>
+</html>
