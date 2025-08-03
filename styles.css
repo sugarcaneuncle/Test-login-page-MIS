@@ -1,0 +1,179 @@
+/* PRIMARY-COLOR: #000000 */
+/* BACKGROUND-COLOR: #FFFFFF */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF;
+    color: #000000;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    border: 1px dashed #eee; /* Debug border - remove in final version */
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+
+.logo-box {
+    padding: 2rem;
+    border: 1px solid rgba(0,0,0,0.1); /* Optional border for visual guidance - remove in final version */
+    margin: 2rem;
+    background-color: transparent;
+    transition: all 0.3s ease, background-color 0.5s ease, border-color 0.5s ease;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+}
+
+.logo-box h1 {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #000000;
+    max-width: 200px;
+    line-height: 1.2;
+    transition: all 0.3s ease, color 0.5s ease;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+    .logo-box {
+        padding: 1.75rem;
+        margin: 1.5rem;
+    }
+    
+    .logo-box h1 {
+        font-size: 1.75rem;
+        max-width: 180px;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .container {
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .logo-box {
+        padding: 1.5rem;
+        margin: 1rem;
+        border-radius: 12px;
+    }
+    
+    .logo-box h1 {
+        font-size: 1.5rem;
+        max-width: 150px;
+        text-align: center;
+    }
+}
+
+/* Small Mobile Responsive */
+@media (max-width: 480px) {
+    .logo-box {
+        padding: 1rem;
+        margin: 0.5rem;
+        border-radius: 10px;
+    }
+    
+    .logo-box h1 {
+        font-size: 1.2rem;
+        max-width: 120px;
+    }
+}
+
+/* Large Desktop Responsive */
+@media (min-width: 1200px) {
+    .logo-box {
+        padding: 2.5rem;
+        margin: 2.5rem;
+        border-radius: 12px;
+    }
+    
+    .logo-box h1 {
+        font-size: 2.25rem;
+        max-width: 220px;
+    }
+}
+
+/* Extra Large Desktop */
+@media (min-width: 1600px) {
+    .logo-box {
+        padding: 3rem;
+        margin: 3rem;
+        border-radius: 16px;
+    }
+    
+    .logo-box h1 {
+        font-size: 2.5rem;
+        max-width: 250px;
+    }
+}
+
+/* Landscape Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .container {
+        align-items: flex-start;
+    }
+    
+    .logo-box {
+        padding: 1rem;
+        margin: 1rem;
+        border-radius: 8px;
+    }
+    
+    .logo-box h1 {
+        font-size: 1.3rem;
+        max-width: 140px;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .logo-box h1 {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* Animation classes for JavaScript */
+.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.loaded {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Color transition effects */
+.container:hover {
+    filter: brightness(1.05);
+}
+
+.logo-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
