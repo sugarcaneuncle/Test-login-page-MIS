@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School MIS Admin Panel - Demo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .demo-header {
+            margin-bottom: 40px;
+        }
+        .demo-header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .demo-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .demo-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        .demo-btn {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        .demo-btn:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateY(-2px);
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .feature-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #60a5fa;
+        }
+        .feature-card p {
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        .tech-stack {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 40px;
+            backdrop-filter: blur(10px);
+        }
+        .tech-stack h2 {
+            margin-bottom: 20px;
+            color: #60a5fa;
+        }
+        .tech-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .tech-item {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        @media (max-width: 768px) {
+            .demo-header h1 {
+                font-size: 2rem;
+            }
+            .demo-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .demo-btn {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <h1>🎓 School MIS Admin Panel</h1>
+            <p>A modern, responsive admin panel for educational institutions</p>
+        </div>
+
+        <div class="demo-buttons">
+            <a href="index.html" class="demo-btn">🚀 Launch Admin Panel</a>
+            <a href="README.md" class="demo-btn">📖 View Documentation</a>
+            <button onclick="window.print()" class="demo-btn">🖨️ Print Dashboard</button>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>📊 Dashboard Overview</h3>
+                <p>Real-time metrics display with interactive cards showing student count, teacher count, events, and meals served. Features smooth animations and hover effects.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📈 Performance Analytics</h3>
+                <p>Dynamic performance metrics with period selectors, progress bars, and visual indicators for attendance, academic performance, and fee collection.</p>
+            </div>
+            <div class="feature-card">
+                <h3>💰 Financial Charts</h3>
+                <p>Interactive line charts showing student finance trends with multiple datasets, period controls, and responsive design using Chart.js.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📅 School Calendar</h3>
+                <p>Full-featured calendar with event management, navigation controls, event indicators, and modal popups for detailed event information.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📱 Responsive Design</h3>
+                <p>Mobile-first design that adapts perfectly to desktop, tablet, and mobile devices with collapsible sidebar and touch-friendly interactions.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎨 Professional Theme</h3>
+                <p>Beautiful blue, white, and black color scheme with modern gradients, smooth transitions, and professional typography throughout the interface.</p>
+            </div>
+        </div>
+
+        <div class="tech-stack">
+            <h2>🛠️ Technology Stack</h2>
+            <div class="tech-list">
+                <div class="tech-item">HTML5</div>
+                <div class="tech-item">CSS3</div>
+                <div class="tech-item">JavaScript ES6+</div>
+                <div class="tech-item">Chart.js</div>
+                <div class="tech-item">Font Awesome</div>
+                <div class="tech-item">Responsive Design</div>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px; opacity: 0.8;">
+            <p>Built with ❤️ for educational institutions</p>
+            <p>Ready to use - No installation required!</p>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactive effects
+        document.querySelectorAll('.demo-btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px) scale(1.05)';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add typing effect to the title
+        const title = document.querySelector('.demo-header h1');
+        const originalText = title.textContent;
+        title.textContent = '';
+        
+        let i = 0;
+        const typeWriter = () => {
+            if (i < originalText.length) {
+                title.textContent += originalText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        };
+        
+        setTimeout(typeWriter, 500);
+    </script>
+</body>
+</html>

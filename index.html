@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School MIS Admin Panel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-graduation-cap"></i> School MIS</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item active">
+                    <a href="#dashboard" class="nav-link">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#students" class="nav-link">
+                        <i class="fas fa-user-graduate"></i>
+                        <span>Students</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#teachers" class="nav-link">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <span>Teachers</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#finance" class="nav-link">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span>Finance</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#performance" class="nav-link">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Performance</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#calendar" class="nav-link">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Calendar</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1>Dashboard Overview</h1>
+                </div>
+                <div class="header-right">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="admin-profile">
+                        <img src="https://via.placeholder.com/40x40/1e40af/ffffff?text=AD" alt="Admin" class="admin-avatar">
+                        <div class="admin-info">
+                            <span class="admin-name">Admin User</span>
+                            <span class="admin-role">School Administrator</span>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Summary Cards -->
+                <div class="summary-cards">
+                    <div class="card">
+                        <div class="card-icon students">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Total Students</h3>
+                            <p class="card-number">1,247</p>
+                            <span class="card-change positive">+12% from last month</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon teachers">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Total Teachers</h3>
+                            <p class="card-number">89</p>
+                            <span class="card-change positive">+3% from last month</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon events">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>School Events</h3>
+                            <p class="card-number">24</p>
+                            <span class="card-change neutral">This month</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon meals">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Meals Served</h3>
+                            <p class="card-number">15,432</p>
+                            <span class="card-change positive">+8% from last week</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Performance Section -->
+                <div class="performance-section">
+                    <div class="section-header">
+                        <h2>Performance Overview</h2>
+                        <div class="period-selector">
+                            <button class="period-btn active">This Week</button>
+                            <button class="period-btn">Last Week</button>
+                            <button class="period-btn">This Month</button>
+                        </div>
+                    </div>
+                    <div class="performance-cards">
+                        <div class="performance-card">
+                            <h4>Attendance Rate</h4>
+                            <div class="performance-metric">
+                                <span class="metric-value">94.2%</span>
+                                <span class="metric-change positive">+2.1%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 94.2%"></div>
+                            </div>
+                        </div>
+                        <div class="performance-card">
+                            <h4>Academic Performance</h4>
+                            <div class="performance-metric">
+                                <span class="metric-value">87.5%</span>
+                                <span class="metric-change positive">+1.8%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 87.5%"></div>
+                            </div>
+                        </div>
+                        <div class="performance-card">
+                            <h4>Fee Collection</h4>
+                            <div class="performance-metric">
+                                <span class="metric-value">92.8%</span>
+                                <span class="metric-change positive">+3.2%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 92.8%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="charts-section">
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3>Student Finance Trends</h3>
+                            <div class="chart-controls">
+                                <select class="chart-period">
+                                    <option>Last 6 Months</option>
+                                    <option>Last Year</option>
+                                    <option>Last 2 Years</option>
+                                </select>
+                            </div>
+                        </div>
+                        <canvas id="financeChart" width="400" height="200"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3>Student Growth Rate</h3>
+                            <div class="chart-controls">
+                                <select class="chart-period">
+                                    <option>This Year</option>
+                                    <option>Last Year</option>
+                                    <option>Last 3 Years</option>
+                                </select>
+                            </div>
+                        </div>
+                        <canvas id="growthChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+
+                <!-- Calendar Section -->
+                <div class="calendar-section">
+                    <div class="section-header">
+                        <h2>School Calendar</h2>
+                        <button class="btn-primary">
+                            <i class="fas fa-plus"></i> Add Event
+                        </button>
+                    </div>
+                    <div class="calendar-container">
+                        <div class="calendar-header">
+                            <button class="calendar-nav">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <h3 id="currentMonth">December 2024</h3>
+                            <button class="calendar-nav">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="calendar-grid">
+                            <div class="calendar-weekdays">
+                                <div>Sun</div>
+                                <div>Mon</div>
+                                <div>Tue</div>
+                                <div>Wed</div>
+                                <div>Thu</div>
+                                <div>Fri</div>
+                                <div>Sat</div>
+                            </div>
+                            <div class="calendar-days" id="calendarDays">
+                                <!-- Calendar days will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
